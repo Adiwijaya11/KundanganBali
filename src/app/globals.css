@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf6ee;
+  --surface: #f2ebd9;
+  --foreground: #241d15;
+  --muted: #5c4f3e;
+  --accent: #835c16;
+  --accent-line: #c59b43;
+  --bronze: #3d2e1e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-line: var(--accent-line);
+  --color-bronze: var(--bronze);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #835c16;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
