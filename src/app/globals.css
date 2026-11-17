@@ -42,3 +42,27 @@ textarea:focus-visible {
     scroll-behavior: auto;
   }
 }
+
+@keyframes leaf-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate3d(28px, 48vh, 0) rotate(140deg);
+  }
+  90% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(-18px, 108vh, 0) rotate(290deg);
+    opacity: 0;
+  }
+}
+
+.animate-leaf-fall {
+  animation: leaf-fall linear infinite;
+}
