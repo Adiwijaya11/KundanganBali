@@ -37,3 +37,10 @@ export function getInvitationPath(invitation: InvitationData): string {
     ? `/otonan/${invitation.slug}`
     : `/pernikahan/${invitation.slug}`;
 }
+
+export function getAllInvitations(): InvitationData[] {
+  return [
+    ...Object.values(OTONAN_INVITATIONS),
+    ...Object.values(WEDDING_INVITATIONS),
+  ];
+}

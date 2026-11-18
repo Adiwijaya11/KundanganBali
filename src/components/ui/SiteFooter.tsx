@@ -38,6 +38,12 @@ export function SiteFooter() {
               Demo Undangan
             </Link>
             <Link
+              href="/kontak"
+              className="transition-colors hover:text-zinc-900"
+            >
+              Kontak
+            </Link>
+            <Link
               href="/otonan/kuru-baya"
               className="transition-colors hover:text-zinc-900"
             >

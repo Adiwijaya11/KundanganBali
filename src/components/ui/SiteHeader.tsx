@@ -8,21 +8,30 @@ const NAV_LINKS = [
   { href: "/", label: "Beranda" },
   { href: "/pricing", label: "Paket Harga" },
   { href: "/demo", label: "Demo Undangan" },
+  { href: "/kontak", label: "Kontak" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({
+  disableScrollShrink = false,
+}: {
+  disableScrollShrink?: boolean;
+}) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const isFloating = !disableScrollShrink && pathname !== "/demo" && scrolled;
+
   useEffect(() => {
+    if (disableScrollShrink || pathname === "/demo") return;
+
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [disableScrollShrink, pathname]);
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -40,12 +49,12 @@ export function SiteHeader() {
   return (
     <header
       className={`sticky top-0 z-30 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-        scrolled ? "px-3 pt-3 sm:px-6" : "px-0 pt-0"
+        isFloating ? "px-3 pt-3 sm:px-6" : "px-0 pt-0"
       }`}
     >
       <div
         className={`mx-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
-          scrolled
+          isFloating
             ? "max-w-5xl rounded-2xl border border-zinc-300/90 bg-[#F7F6F2]/95 px-4 py-2.5 shadow-[0_14px_34px_-18px_rgba(24,24,27,0.28)] backdrop-blur-md sm:px-6"
             : "max-w-full border-b border-zinc-300/80 bg-[#F7F6F2]/95 px-4 py-3 shadow-[0_4px_16px_-10px_rgba(24,24,27,0.16)] backdrop-blur-md sm:px-8 sm:py-3.5 lg:px-12"
         }`}
