@@ -44,7 +44,7 @@ export function LandingHero() {
             KundanganBali menghadirkan platform undangan digital cepat dan rapi
             dengan alamat tautan terstruktur seperti{" "}
             <code className="rounded bg-[#F7F6F2]/90 px-1.5 py-0.5 text-sm font-semibold text-zinc-900">
-              /telubulan/kuru-baya
+              /otonan/kuru-baya
             </code>{" "}
             dan{" "}
             <code className="rounded bg-[#F7F6F2]/90 px-1.5 py-0.5 text-sm font-semibold text-zinc-900">
@@ -57,10 +57,10 @@ export function LandingHero() {
         <RevealOnScroll forceShow delayMs={180}>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/telubulan/kuru-baya"
+              href="/otonan/kuru-baya"
               className="inline-flex min-h-[48px] w-full items-center justify-center rounded-lg bg-[#2F4538] px-6 py-3 text-sm font-semibold text-[#F7F6F2] shadow-sm transition-colors hover:bg-[#23352A] sm:w-auto sm:text-base"
             >
-              Lihat Demo Telubulanan
+              Lihat Demo Otonan
             </Link>
             <Link
               href="/pricing"

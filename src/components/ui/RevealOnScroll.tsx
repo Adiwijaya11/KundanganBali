@@ -10,6 +10,7 @@ type RevealOnScrollProps = {
   className?: string;
   forceShow?: boolean;
   direction?: RevealDirection;
+  slow?: boolean;
 };
 
 const HIDDEN_TRANSFORM: Record<RevealDirection, string> = {
@@ -24,6 +25,7 @@ export function RevealOnScroll({
   className = "",
   forceShow = false,
   direction = "up",
+  slow = false,
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -51,7 +53,9 @@ export function RevealOnScroll({
     <div
       ref={ref}
       style={{ transitionDelay: `${delayMs}ms` }}
-      className={`transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100 ${
+      className={`transition-all ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100 ${
+        slow ? "duration-1000" : "duration-700"
+      } ${
         isVisible
           ? "translate-x-0 translate-y-0 opacity-100"
           : HIDDEN_TRANSFORM[direction]

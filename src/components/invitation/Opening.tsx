@@ -1,10 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
+  FallingKambojaPetals,
   KambojaBlossom,
   PadmaDivider,
   PadmaMandalaWatermark,
+  PatraCrownOrnament,
   PepatranCorner,
 } from "@/components/ui/BalineseOrnaments";
 
@@ -47,8 +50,23 @@ export function Opening({
           : "translate-y-0 scale-100 opacity-100"
       }`}
     >
+      {/* Textured Balinese paper backdrop */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <Image
+          src="/images/invitation/bali-ornament-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-80"
+        />
+        <div className="absolute inset-0 bg-[#F2EBD9]/35" />
+      </div>
+
+      <FallingKambojaPetals />
+
       <PadmaMandalaWatermark
-        className={`absolute h-[520px] w-[520px] text-[#835C16]/[0.08] transition-all duration-1000 ease-out motion-reduce:transition-none sm:h-[680px] sm:w-[680px] ${
+        className={`absolute h-[520px] w-[520px] text-[#835C16]/[0.14] transition-all duration-1000 ease-out motion-reduce:transition-none sm:h-[680px] sm:w-[680px] ${
           entered ? "scale-100 opacity-100" : "scale-90 opacity-0"
         } animate-[spin_75s_linear_infinite] motion-reduce:animate-none`}
       />
@@ -71,6 +89,7 @@ export function Opening({
             entered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
+          <PatraCrownOrnament className="mx-auto mb-2 text-[#835C16]/85" />
           <KambojaBlossom className="mx-auto mb-3 h-7 w-7 text-[#835C16]" />
           <p className="font-serif text-lg italic font-medium text-[#835C16] sm:text-xl">
             {greeting}

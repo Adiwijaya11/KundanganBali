@@ -3,42 +3,49 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 const PACKAGES = [
   {
-    name: "Pratama",
-    price: "Rp 149.000",
-    tagline: "Ringkas & elegan untuk acara inti keluarga.",
+    name: "Basic",
+    price: "Rp199.000",
+    duration: "Aktif 1 tahun",
+    tagline: "Undangan digital sederhana dengan fitur utama.",
+    badge: null,
     featured: false,
     features: [
       "Tautan khusus kundanganbali.com/<nama>",
       "Sampul pembuka & profil acara",
       "Detail jadwal & hitung mundur (WITA)",
       "Integrasi Google Maps & salin alamat",
-      "Masa aktif tautan 6 bulan",
-    ],
-  },
-  {
-    name: "Madya",
-    price: "Rp 249.000",
-    tagline: "Pilihan favorit dengan galeri foto & musik latar.",
-    featured: true,
-    features: [
-      "Semua fitur paket Pratama",
-      "Galeri foto interaktif dengan Lightbox",
-      "Musik latar instrumen tradisional Bali",
-      "Personalisasi nama tamu (?to=Nama)",
       "Masa aktif tautan 1 tahun",
     ],
   },
   {
-    name: "Utama",
-    price: "Rp 399.000",
-    tagline: "Layanan kustom penuh dengan pendampingan prioritas.",
+    name: "Premium",
+    price: "Rp249.000",
+    duration: "Aktif 1 tahun",
+    tagline: "Undangan interaktif dengan RSVP, musik, ucapan, dan amplop digital.",
+    badge: "Paling direkomendasikan",
+    featured: true,
+    features: [
+      "Semua fitur paket Basic",
+      "Konfirmasi kehadiran (RSVP) & ucapan tamu",
+      "Musik latar instrumen tradisional Bali",
+      "Galeri foto interaktif dengan Lightbox",
+      "Fitur amplop digital",
+      "Masa aktif tautan 1 tahun",
+    ],
+  },
+  {
+    name: "Exclusive",
+    price: "Rp599.000",
+    duration: "Aktif 1 tahun",
+    tagline: "Undangan custom dengan personalisasi nama tamu dan fitur premium.",
+    badge: "Exclusive",
     featured: false,
     features: [
-      "Semua fitur paket Madya",
-      "Penyesuaian tata letak & tipografi khusus",
-      "Jumlah foto galeri & sesi acara fleksibel",
-      "Bantuan input daftar tamu undangan",
-      "Masa aktif tautan selamanya",
+      "Semua fitur paket Premium",
+      "Desain & tata letak custom sesuai permintaan",
+      "Personalisasi nama tamu (?to=Nama+Tamu)",
+      "Bantuan input daftar tamu & revisi prioritas",
+      "Masa aktif tautan 1 tahun",
     ],
   },
 ];
@@ -79,22 +86,35 @@ export function PricingSection() {
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <h2 className="font-serif text-2xl font-semibold text-zinc-900">
-                      Paket {pkg.name}
+                      {pkg.name}
                     </h2>
-                    {pkg.featured ? (
-                      <span className="rounded-full bg-[#2F4538] px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#F7F6F2]">
-                        Populer
+                    {pkg.badge ? (
+                      <span
+                        className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wider ${
+                          pkg.featured
+                            ? "bg-[#2F4538] text-[#F7F6F2]"
+                            : "bg-zinc-900 text-[#F7F6F2]"
+                        }`}
+                      >
+                        {pkg.badge}
                       </span>
                     ) : null}
                   </div>
 
-                  <p className="mt-2 text-sm text-zinc-600">{pkg.tagline}</p>
-
-                  <p className="mt-5 font-serif text-4xl font-semibold text-zinc-900">
-                    {pkg.price}
+                  <p className="mt-2.5 text-sm leading-relaxed text-zinc-600">
+                    {pkg.tagline}
                   </p>
+
+                  <div className="mt-5 flex items-baseline gap-2.5">
+                    <p className="font-serif text-4xl font-semibold text-zinc-900">
+                      {pkg.price}
+                    </p>
+                    <span className="text-xs font-medium text-zinc-500">
+                      · {pkg.duration}
+                    </span>
+                  </div>
 
                   <div className="my-6 h-px w-full bg-zinc-200" />
 

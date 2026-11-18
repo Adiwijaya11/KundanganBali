@@ -2,25 +2,25 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { InvitationTemplate } from "@/components/invitation/InvitationTemplate";
-import { getAllTelubulanSlugs, getTelubulanBySlug } from "@/lib/invitations";
+import { getAllOtonanSlugs, getOtonanBySlug } from "@/lib/invitations";
 
-type TelubulanPageProps = {
+type OtonanPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  return getAllTelubulanSlugs().map((slug) => ({ slug }));
+  return getAllOtonanSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
-}: TelubulanPageProps): Promise<Metadata> {
+}: OtonanPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const invitation = getTelubulanBySlug(slug);
+  const invitation = getOtonanBySlug(slug);
 
   if (!invitation) {
     return {
-      title: "Undangan Telubulanan Tidak Ditemukan",
+      title: "Undangan Otonan Tidak Ditemukan",
     };
   }
 
@@ -30,13 +30,13 @@ export async function generateMetadata({
   };
 }
 
-async function TelubulanContent({
+async function OtonanContent({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const invitation = getTelubulanBySlug(slug);
+  const invitation = getOtonanBySlug(slug);
 
   if (!invitation) {
     notFound();
@@ -45,7 +45,7 @@ async function TelubulanContent({
   return <InvitationTemplate invitation={invitation} />;
 }
 
-export default function TelubulanPage({ params }: TelubulanPageProps) {
+export default function OtonanPage({ params }: OtonanPageProps) {
   return (
     <Suspense
       fallback={
@@ -54,7 +54,7 @@ export default function TelubulanPage({ params }: TelubulanPageProps) {
         </div>
       }
     >
-      <TelubulanContent params={params} />
+      <OtonanContent params={params} />
     </Suspense>
   );
 }

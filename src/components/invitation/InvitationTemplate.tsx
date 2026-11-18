@@ -31,7 +31,7 @@ export function InvitationTemplate({ invitation }: InvitationTemplateProps) {
   const lenisRef = useRef<Lenis | null>(null);
 
   const navLinks =
-    invitation.category === "telubulanan"
+    invitation.category === "otonan"
       ? [
           { href: "#hero", label: "Beranda" },
           { href: "#doa", label: "Doa" },
@@ -218,7 +218,7 @@ export function InvitationTemplate({ invitation }: InvitationTemplateProps) {
           />
         )}
 
-        {invitation.category === "telubulanan" ? (
+        {invitation.category === "otonan" ? (
           <>
             <Gallery items={invitation.gallery} />
             {invitation.milestones ? (

@@ -46,8 +46,8 @@ export function SiteHeader() {
       <div
         className={`mx-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
           scrolled
-            ? "max-w-5xl rounded-2xl border border-zinc-200/90 bg-[#F7F6F2]/85 px-4 py-2.5 shadow-[0_14px_34px_-18px_rgba(24,24,27,0.22)] backdrop-blur-md sm:px-6"
-            : "max-w-full border-b border-zinc-200/70 bg-[#F7F6F2]/80 px-5 py-3.5 backdrop-blur-md sm:px-8 lg:px-12"
+            ? "max-w-5xl rounded-2xl border border-zinc-300/90 bg-[#F7F6F2]/95 px-4 py-2.5 shadow-[0_14px_34px_-18px_rgba(24,24,27,0.28)] backdrop-blur-md sm:px-6"
+            : "max-w-full border-b border-zinc-300/80 bg-[#F7F6F2]/95 px-4 py-3 shadow-[0_4px_16px_-10px_rgba(24,24,27,0.16)] backdrop-blur-md sm:px-8 sm:py-3.5 lg:px-12"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
@@ -95,10 +95,10 @@ export function SiteHeader() {
           {/* Desktop CTA + Mobile Toggle */}
           <div className="flex items-center gap-2">
             <Link
-              href="/telubulan/kuru-baya"
+              href="/otonan/kuru-baya"
               className="group hidden min-h-[42px] items-center justify-center gap-2 rounded-xl bg-[#2F4538] px-4 py-2 text-sm font-semibold text-[#F7F6F2] shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#23352A] hover:shadow-md active:translate-y-0 motion-reduce:transform-none sm:inline-flex"
             >
-              <span>Demo Telubulanan</span>
+              <span>Demo Otonan</span>
               <svg
                 width="15"
                 height="15"
@@ -125,7 +125,7 @@ export function SiteHeader() {
                 mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"
               }
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-200 bg-white/90 text-zinc-900 transition-colors hover:bg-zinc-100 cursor-pointer md:hidden"
+              className="inline-flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-zinc-300 bg-white px-3 text-xs font-semibold text-zinc-900 shadow-xs transition-colors hover:bg-zinc-100 cursor-pointer md:hidden"
             >
               <span className="relative flex h-4 w-4 items-center justify-center">
                 <span
@@ -148,6 +148,7 @@ export function SiteHeader() {
                   }`}
                 />
               </span>
+              <span>{mobileMenuOpen ? "Tutup" : "Menu"}</span>
             </button>
           </div>
         </div>
@@ -185,12 +186,12 @@ export function SiteHeader() {
                 );
               })}
               <Link
-                href="/telubulan/kuru-baya"
+                href="/otonan/kuru-baya"
                 tabIndex={mobileMenuOpen ? 0 : -1}
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-1.5 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#2F4538] px-4 py-2 text-sm font-semibold text-[#F7F6F2] transition-colors hover:bg-[#23352A]"
               >
-                Demo Telubulanan
+                Demo Otonan
               </Link>
             </div>
           </nav>

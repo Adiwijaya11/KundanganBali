@@ -1,4 +1,4 @@
-import { kuruBayaInvitation } from "@/data/invitations/telubulan/kuru-baya";
+import { kuruBayaInvitation } from "@/data/invitations/otonan/kuru-baya";
 import type { InvitationData } from "@/types/invitation";
 
 /**
@@ -8,9 +8,9 @@ import type { InvitationData } from "@/types/invitation";
 const WEDDING_INVITATIONS: Record<string, InvitationData> = {};
 
 /**
- * Registry of Telubulanan (3-bulanan) invitations (accessed at `/telubulan/<slug>`).
+ * Registry of Otonan invitations (accessed at `/otonan/<slug>`).
  */
-const TELUBULAN_INVITATIONS: Record<string, InvitationData> = {
+const OTONAN_INVITATIONS: Record<string, InvitationData> = {
   [kuruBayaInvitation.slug]: kuruBayaInvitation,
 };
 
@@ -23,17 +23,17 @@ export function getAllWeddingSlugs(): string[] {
   return Object.keys(WEDDING_INVITATIONS);
 }
 
-export function getTelubulanBySlug(slug: string): InvitationData | null {
+export function getOtonanBySlug(slug: string): InvitationData | null {
   const normalized = slug.trim().toLowerCase();
-  return TELUBULAN_INVITATIONS[normalized] ?? null;
+  return OTONAN_INVITATIONS[normalized] ?? null;
 }
 
-export function getAllTelubulanSlugs(): string[] {
-  return Object.keys(TELUBULAN_INVITATIONS);
+export function getAllOtonanSlugs(): string[] {
+  return Object.keys(OTONAN_INVITATIONS);
 }
 
 export function getInvitationPath(invitation: InvitationData): string {
-  return invitation.category === "telubulanan"
-    ? `/telubulan/${invitation.slug}`
+  return invitation.category === "otonan"
+    ? `/otonan/${invitation.slug}`
     : `/pernikahan/${invitation.slug}`;
 }

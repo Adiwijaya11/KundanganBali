@@ -3,6 +3,8 @@
 import Image from "next/image";
 import {
   CalendarMotifIcon,
+  FallingKambojaPetals,
+  KambojaBlossom,
   LocationMotifIcon,
   PadmaDivider,
   PadmaMandalaWatermark,
@@ -32,35 +34,68 @@ export function Hero({
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[calc(100svh-69px)] items-center overflow-hidden bg-[#FAF6EE] px-5 py-6 sm:px-8 sm:py-10 lg:px-12 lg:py-16"
+      className="relative flex min-h-[calc(100svh-69px)] items-center overflow-hidden bg-[#FAF6EE] px-5 py-7 sm:px-8 sm:py-10 lg:px-12 lg:py-16"
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-7 sm:gap-9 lg:grid-cols-12 lg:gap-14">
+      {/* Subtle Balinese paper & gold embossing backdrop */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <Image
+          src="/images/invitation/bali-ornament-bg.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-75"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(250,246,238,0.68)_0%,rgba(250,246,238,0.42)_65%,rgba(250,246,238,0.28)_100%)]" />
+      </div>
+
+      {/* Visible Balinese corner carvings on all screens including mobile */}
+      <PepatranCorner className="pointer-events-none absolute top-3 left-3 z-10 h-8 w-8 text-[#835C16]/85 sm:top-5 sm:left-5 sm:h-10 sm:w-10" />
+      <PepatranCorner className="pointer-events-none absolute top-3 right-3 z-10 h-8 w-8 rotate-90 text-[#835C16]/85 sm:top-5 sm:right-5 sm:h-10 sm:w-10" />
+      <PepatranCorner className="pointer-events-none absolute bottom-3 left-3 z-10 h-8 w-8 -rotate-90 text-[#835C16]/85 sm:bottom-5 sm:left-5 sm:h-10 sm:w-10" />
+      <PepatranCorner className="pointer-events-none absolute right-3 bottom-3 z-10 h-8 w-8 rotate-180 text-[#835C16]/85 sm:right-5 sm:bottom-5 sm:h-10 sm:w-10" />
+
+      <FallingKambojaPetals className="opacity-85" />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-14">
         <RevealOnScroll
           forceShow={isOpened}
           delayMs={180}
           className="order-1 flex justify-center lg:order-2 lg:col-span-5 lg:justify-end"
         >
-          <figure className="relative w-[176px] sm:w-[240px] lg:w-[350px]">
-            <PadmaMandalaWatermark className="absolute top-1/2 left-1/2 -z-0 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 text-[#835C16]/[0.09] sm:h-[340px] sm:w-[340px] lg:h-[440px] lg:w-[440px]" />
-            <PepatranCorner className="absolute -top-2.5 -left-2.5 z-10 h-7 w-7 text-[#835C16] sm:h-9 sm:w-9" />
-            <PepatranCorner className="absolute -top-2.5 -right-2.5 z-10 h-7 w-7 rotate-90 text-[#835C16] sm:h-9 sm:w-9" />
-            <PepatranCorner className="absolute -bottom-1 left-0 z-10 hidden h-7 w-7 -rotate-90 text-[#835C16]/75 sm:block sm:h-8 sm:w-8" />
-            <PepatranCorner className="absolute right-0 -bottom-1 z-10 hidden h-7 w-7 rotate-180 text-[#835C16]/75 sm:block sm:h-8 sm:w-8" />
+          <figure className="relative w-[224px] sm:w-[270px] lg:w-[345px]">
+            {/* Rotating sacred Padma mandala behind the arch frame */}
+            <PadmaMandalaWatermark className="absolute top-1/2 left-1/2 -z-0 h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2 text-[#835C16]/[0.16] sm:h-[360px] sm:w-[360px] lg:h-[440px] lg:w-[440px]" />
 
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-full rounded-b-2xl border border-[#C59B43]/60 bg-[#F2EBD9] p-2 shadow-[0_14px_34px_-18px_rgba(36,29,21,0.28)] sm:p-2.5">
-              <div className="relative h-full w-full overflow-hidden rounded-t-full rounded-b-xl bg-[#EAE0C8]">
-                <Image
-                  src={hero.coverImage}
-                  alt={hero.coverImageAlt}
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 196px, (max-width: 1024px) 250px, 350px"
-                  className="object-cover"
-                />
+            {/* Outer champagne-gold double matte arch frame */}
+            <div className="relative rounded-t-full rounded-b-3xl border border-[#C59B43]/70 bg-gradient-to-b from-[#F2EBD9] to-[#EAE0C8] p-2.5 shadow-[0_20px_42px_-20px_rgba(36,29,21,0.34)] sm:p-3.5">
+              {/* Bottom corner pepatran flourishes aligned cleanly with rectangular base */}
+              <PepatranCorner className="pointer-events-none absolute bottom-2 left-2 z-10 h-6 w-6 -rotate-90 text-[#835C16]/75 sm:h-7 sm:w-7" />
+              <PepatranCorner className="pointer-events-none absolute right-2 bottom-2 z-10 h-6 w-6 rotate-180 text-[#835C16]/75 sm:h-7 sm:w-7" />
+
+              {/* Inner ivory mat & hairline gold rim */}
+              <div className="rounded-t-full rounded-b-2xl border border-[#C59B43]/45 bg-[#FAF6EE] p-1.5 sm:p-2">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-full rounded-b-xl bg-[#EAE0C8] ring-1 ring-[#835C16]/15 ring-inset">
+                  <Image
+                    src={hero.coverImage}
+                    alt={hero.coverImageAlt}
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 224px, (max-width: 1024px) 270px, 345px"
+                    className="object-cover object-[center_20%]"
+                  />
+                </div>
               </div>
+
+              {/* Centered Kamboja seal at bottom of frame */}
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-3.5 left-1/2 z-20 inline-flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-[#C59B43]/70 bg-[#FAF6EE] text-[#835C16] shadow-xs"
+              >
+                <KambojaBlossom className="h-4 w-4" />
+              </span>
             </div>
 
-            <figcaption className="mt-2.5 text-center font-serif text-xs italic text-[#5C4F3E] sm:text-sm">
+            <figcaption className="mt-5 text-center font-serif text-xs italic text-[#5C4F3E] sm:text-sm">
               {hero.caption}
             </figcaption>
           </figure>

@@ -51,21 +51,21 @@ export function InvitationNavbar({
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[#C59B43]/30 bg-[#FAF6EE]/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-8 lg:px-12">
+    <header className="sticky top-0 z-30 border-b border-[#C59B43]/55 bg-[#FAF6EE]/95 shadow-[0_6px_20px_-12px_rgba(36,29,21,0.28)] backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-2.5 sm:gap-3 sm:px-8 lg:px-12">
         <a
           href="#hero"
           onClick={(event) => handleLinkClick(event, "#hero")}
-          className="group inline-flex min-h-[44px] items-center gap-2.5 rounded-md pr-2 text-[#241D15] transition-colors hover:text-[#835C16]"
+          className="group inline-flex min-h-[44px] min-w-0 items-center gap-2 rounded-md pr-1 text-[#241D15] transition-colors hover:text-[#835C16] sm:gap-2.5 sm:pr-2"
         >
-          <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C59B43]/60 bg-[#F2EBD9] text-[#835C16] transition-colors group-hover:border-[#835C16]">
+          <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C59B43]/75 bg-[#F2EBD9] text-[#835C16] transition-colors group-hover:border-[#835C16]">
             <KambojaBlossom className="h-5 w-5" />
           </span>
-          <span className="flex flex-col">
-            <span className="font-serif text-lg font-semibold leading-none tracking-wide sm:text-xl">
+          <span className="flex min-w-0 flex-col">
+            <span className="truncate font-serif text-base font-semibold leading-none tracking-wide sm:text-xl">
               {coupleNickname}
             </span>
-            <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#835C16]">
+            <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#835C16]">
               {themeLabel}
             </span>
           </span>
@@ -159,27 +159,28 @@ export function InvitationNavbar({
               mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"
             }
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#835C16]/35 bg-[#F2EBD9]/75 text-[#241D15] transition-colors hover:border-[#835C16] hover:bg-[#F2EBD9] cursor-pointer md:hidden"
+            className="inline-flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-[#835C16]/55 bg-[#F2EBD9] px-3 text-xs font-semibold text-[#241D15] shadow-2xs transition-colors hover:border-[#835C16] cursor-pointer md:hidden"
           >
             {mobileMenuOpen ? (
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path
                   d="M5 5L15 15M15 5L5 15"
                   stroke="currentColor"
-                  strokeWidth="1.6"
+                  strokeWidth="1.8"
                   strokeLinecap="round"
                 />
               </svg>
             ) : (
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path
                   d="M3.5 6H16.5M3.5 10H16.5M3.5 14H16.5"
                   stroke="currentColor"
-                  strokeWidth="1.6"
+                  strokeWidth="1.8"
                   strokeLinecap="round"
                 />
               </svg>
             )}
+            <span>{mobileMenuOpen ? "Tutup" : "Menu"}</span>
           </button>
         </div>
       </div>

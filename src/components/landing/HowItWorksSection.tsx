@@ -5,7 +5,7 @@ const STEPS = [
     step: "Langkah 01",
     title: "Pilih Paket & Jenis Acara",
     description:
-      "Tentukan paket undangan yang sesuai untuk acara Pawiwahan, Resepsi, atau Upacara Telubulanan.",
+      "Tentukan paket undangan yang sesuai untuk acara Pawiwahan, Resepsi, atau Upacara Otonan.",
   },
   {
     step: "Langkah 02",

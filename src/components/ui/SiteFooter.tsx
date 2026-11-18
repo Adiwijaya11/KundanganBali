@@ -16,7 +16,7 @@ export function SiteFooter() {
             </div>
             <p className="mt-2.5 max-w-md text-sm leading-relaxed text-zinc-600">
               Platform pembuatan undangan digital modern untuk upacara
-              Pawiwahan, Resepsi, hingga Telubulanan dengan tautan khusus
+              Pawiwahan, Resepsi, hingga Otonan dengan tautan khusus
               setiap acara.
             </p>
           </div>
@@ -38,10 +38,10 @@ export function SiteFooter() {
               Demo Undangan
             </Link>
             <Link
-              href="/telubulan/kuru-baya"
+              href="/otonan/kuru-baya"
               className="transition-colors hover:text-zinc-900"
             >
-              /telubulan/kuru-baya
+              /otonan/kuru-baya
             </Link>
           </nav>
         </div>

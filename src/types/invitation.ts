@@ -38,7 +38,7 @@ export type MilestoneItem = {
 
 export type InvitationData = {
   slug: string;
-  category: "pernikahan" | "telubulanan";
+  category: "pernikahan" | "otonan";
   themeLabel: string;
   hero: {
     greeting: string;

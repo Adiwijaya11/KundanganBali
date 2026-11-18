@@ -19,7 +19,7 @@ export function CtaSection() {
             Lihat Langsung Hasil Undangan Kami
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-[#E4EAE5] sm:text-base">
-            Jelajahi demo undangan Upacara Telubulanan maupun contoh undangan
+            Jelajahi demo undangan Upacara Otonan maupun contoh undangan
             Pernikahan Adat Bali sebelum memilih paket Anda.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

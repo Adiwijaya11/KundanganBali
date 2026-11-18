@@ -2,6 +2,7 @@ import {
   KambojaBlossom,
   PadmaDivider,
   PadmaMandalaWatermark,
+  PatraCrownOrnament,
 } from "@/components/ui/BalineseOrnaments";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
@@ -16,12 +17,13 @@ export function CeremonyQuote({ heading, text, source }: CeremonyQuoteProps) {
     <section
       id="doa"
       aria-labelledby="quote-heading"
-      className="relative overflow-hidden border-y border-[#C59B43]/25 bg-[#F2EBD9] px-5 py-14 sm:px-8 sm:py-18 lg:px-12"
+      className="relative overflow-hidden border-y border-[#C59B43]/25 bg-[#F2EBD9] px-5 py-16 sm:px-8 sm:py-20 lg:px-12"
     >
-      <PadmaMandalaWatermark className="absolute top-1/2 left-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 text-[#835C16]/[0.06] sm:h-[380px] sm:w-[380px]" />
+      <PadmaMandalaWatermark className="absolute top-1/2 left-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 text-[#835C16]/[0.07] sm:h-[380px] sm:w-[380px]" />
 
       <div className="relative mx-auto max-w-3xl text-center">
         <RevealOnScroll delayMs={0}>
+          <PatraCrownOrnament className="mx-auto mb-2 text-[#835C16]/80" />
           <KambojaBlossom className="mx-auto mb-2.5 h-6 w-6 text-[#835C16]" />
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#835C16]">
             {heading}

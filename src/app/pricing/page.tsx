@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/ui/SiteHeader";
 export const metadata: Metadata = {
   title: "Paket Harga",
   description:
-    "Pilihan paket pembuatan undangan pernikahan digital KundanganBali — Pratama, Madya, dan Utama.",
+    "Pilihan paket pembuatan undangan digital KundanganBali — Basic, Premium, dan Exclusive.",
 };
 
 export default function PricingPage() {

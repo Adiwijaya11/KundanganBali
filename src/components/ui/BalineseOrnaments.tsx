@@ -235,3 +235,111 @@ export function LocationMotifIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+/**
+ * Symmetrical Balinese Patra (scrollwork) crown ornament for ceremonial headers.
+ */
+export function PatraCrownOrnament({
+  className = "",
+  ...props
+}: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="160"
+      height="32"
+      viewBox="0 0 160 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className={className}
+      {...props}
+    >
+      <path
+        d="M80 3C84 9 84.5 15 80 21C75.5 15 76 9 80 3Z"
+        stroke="currentColor"
+        strokeWidth="1.65"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M70 19C60 19 54 12 46 12C39 12 35 16 29 16C21 16 14 12 6 15"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M90 19C100 19 106 12 114 12C121 12 125 16 131 16C139 16 146 12 154 15"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M66 24C58 24 53 20 46 20C40 20 37 22.5 32 22.5"
+        stroke="currentColor"
+        strokeWidth="1.15"
+        strokeLinecap="round"
+        opacity="0.75"
+      />
+      <path
+        d="M94 24C102 24 107 20 114 20C120 20 123 22.5 128 22.5"
+        stroke="currentColor"
+        strokeWidth="1.15"
+        strokeLinecap="round"
+        opacity="0.75"
+      />
+      <circle cx="80" cy="25.5" r="2.2" fill="currentColor" />
+      <circle cx="46" cy="17" r="1.6" fill="currentColor" />
+      <circle cx="114" cy="17" r="1.6" fill="currentColor" />
+    </svg>
+  );
+}
+
+const PETAL_ITEMS = [
+  { id: 1, left: "8%", size: 14, duration: "14s", delay: "0s" },
+  { id: 2, left: "22%", size: 11, duration: "17s", delay: "-5s" },
+  { id: 3, left: "38%", size: 15, duration: "13s", delay: "-9s" },
+  { id: 4, left: "56%", size: 12, duration: "16s", delay: "-3s" },
+  { id: 5, left: "74%", size: 14, duration: "15s", delay: "-7s" },
+  { id: 6, left: "89%", size: 11, duration: "18s", delay: "-11s" },
+];
+
+/**
+ * Gentle drifting champagne-gold kamboja petals for ceremonial sections.
+ */
+export function FallingKambojaPetals({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <div
+      aria-hidden="true"
+      className={`pointer-events-none absolute inset-0 overflow-hidden motion-reduce:hidden ${className}`}
+    >
+      {PETAL_ITEMS.map((petal) => (
+        <span
+          key={petal.id}
+          style={{
+            left: petal.left,
+            top: "-6%",
+            animationDuration: petal.duration,
+            animationDelay: petal.delay,
+          }}
+          className="animate-leaf-fall absolute text-[#C59B43]/55 will-change-transform"
+        >
+          <svg
+            width={petal.size}
+            height={petal.size * 1.4}
+            viewBox="0 0 16 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1C12 5 14 10.5 13 16.5C11.2 19.2 9.6 20.6 8 21C6.4 20.6 4.8 19.2 3 16.5C2 10.5 4 5 8 1Z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      ))}
+    </div>
+  );
+}

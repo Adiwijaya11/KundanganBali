@@ -4,19 +4,17 @@ import Link from "next/link";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SiteFooter } from "@/components/ui/SiteFooter";
 import { SiteHeader } from "@/components/ui/SiteHeader";
-import { getInvitationPath, getTelubulanBySlug } from "@/lib/invitations";
+import { getInvitationPath, getOtonanBySlug } from "@/lib/invitations";
 
 export const metadata: Metadata = {
   title: "Demo Undangan",
   description:
-    "Pratinjau langsung template undangan digital KundanganBali untuk Upacara Telubulanan.",
+    "Pratinjau langsung template undangan digital KundanganBali untuk Upacara Otonan.",
 };
 
 export default function DemoPage() {
-  const telubulanan = getTelubulanBySlug("kuru-baya");
-  const telubulanPath = telubulanan
-    ? getInvitationPath(telubulanan)
-    : "/telubulan/kuru-baya";
+  const otonan = getOtonanBySlug("kuru-baya");
+  const otonanPath = otonan ? getInvitationPath(otonan) : "/otonan/kuru-baya";
 
   return (
     <div className="flex min-h-screen flex-col bg-[#F7F6F2] text-zinc-900">
@@ -35,9 +33,9 @@ export default function DemoPage() {
               <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
                 Setiap jenis upacara memiliki struktur path yang rapi:{" "}
                 <code className="inline-block rounded bg-[#EFECE4] px-1.5 py-0.5 text-xs font-medium text-zinc-900">
-                  /telubulan/&lt;nama&gt;
+                  /otonan/&lt;nama&gt;
                 </code>{" "}
-                untuk 3 Bulanan dan{" "}
+                untuk Upacara Otonan dan{" "}
                 <code className="inline-block rounded bg-[#EFECE4] px-1.5 py-0.5 text-xs font-medium text-zinc-900">
                   /pernikahan/&lt;nama&gt;
                 </code>{" "}
@@ -47,16 +45,16 @@ export default function DemoPage() {
           </RevealOnScroll>
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:gap-8 lg:grid-cols-2">
-            {telubulanan ? (
+            {otonan ? (
               <RevealOnScroll forceShow delayMs={100}>
                 <article className="flex h-full flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_18px_40px_-24px_rgba(24,24,27,0.18)] sm:p-6 lg:p-8">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center justify-between gap-2 rounded-lg bg-[#F7F6F2] px-3 py-2 text-xs text-zinc-600">
                       <span className="min-w-0 truncate font-medium text-zinc-900">
-                        kundanganbali.com{telubulanPath}
+                        kundanganbali.com{otonanPath}
                       </span>
                       <span className="shrink-0 rounded bg-[#2F4538]/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#2F4538]">
-                        {telubulanan.themeLabel}
+                        {otonan.themeLabel}
                       </span>
                     </div>
 
@@ -64,8 +62,8 @@ export default function DemoPage() {
                       <div className="sm:col-span-5">
                         <div className="relative mx-auto aspect-[4/5] w-full max-w-[220px] overflow-hidden rounded-xl bg-[#EFECE4] sm:max-w-none">
                           <Image
-                            src={telubulanan.hero.coverImage}
-                            alt={telubulanan.hero.coverImageAlt}
+                            src={otonan.hero.coverImage}
+                            alt={otonan.hero.coverImageAlt}
                             fill
                             sizes="(max-width: 640px) 220px, 240px"
                             className="object-cover"
@@ -75,13 +73,13 @@ export default function DemoPage() {
 
                       <div className="text-center sm:col-span-7 sm:text-left">
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2F4538]">
-                          {telubulanan.hero.subtitle}
+                          {otonan.hero.subtitle}
                         </p>
                         <h2 className="mt-1.5 font-serif text-2xl font-semibold text-zinc-900 sm:text-3xl">
-                          {telubulanan.hero.displayTitle}
+                          {otonan.hero.displayTitle}
                         </h2>
                         <p className="mt-2 text-sm text-zinc-600">
-                          {telubulanan.hero.dateLocationSummary}
+                          {otonan.hero.dateLocationSummary}
                         </p>
                         <p className="mt-3 text-xs leading-relaxed text-zinc-500">
                           Dilengkapi sampul pembuka, musik latar, galeri
@@ -94,13 +92,13 @@ export default function DemoPage() {
 
                   <div className="mt-6 flex flex-col gap-2.5 border-t border-zinc-100 pt-5 sm:mt-7 sm:flex-row">
                     <Link
-                      href={telubulanPath}
+                      href={otonanPath}
                       className="inline-flex min-h-[46px] flex-1 items-center justify-center rounded-lg bg-[#2F4538] px-4 py-2.5 text-center text-sm font-semibold text-[#F7F6F2] transition-colors hover:bg-[#23352A]"
                     >
                       Buka Demo
                     </Link>
                     <Link
-                      href={`${telubulanPath}?to=Made+Surya`}
+                      href={`${otonanPath}?to=Made+Surya`}
                       className="inline-flex min-h-[46px] flex-1 items-center justify-center rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-center text-sm font-semibold text-zinc-900 transition-colors hover:bg-[#F7F6F2]"
                     >
                       Coba Nama Tamu

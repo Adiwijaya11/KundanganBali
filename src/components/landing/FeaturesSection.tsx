@@ -7,7 +7,7 @@ const FEATURES = [
   {
     title: "Tautan Khusus per Acara",
     description:
-      "Setiap undangan memiliki alamat ringkas seperti /telubulan/kuru-baya yang mudah dibagikan melalui WhatsApp.",
+      "Setiap undangan memiliki alamat ringkas seperti /otonan/kuru-baya yang mudah dibagikan melalui WhatsApp.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -30,7 +30,7 @@ const FEATURES = [
   {
     title: "Ragam Tema & Upacara",
     description:
-      "Mendukung Upacara Telubulanan (3 Bulanan) hingga Pernikahan (Pawiwahan & Resepsi) dengan struktur yang tepat.",
+      "Mendukung Upacara Otonan hingga Pernikahan (Pawiwahan & Resepsi) dengan struktur yang tepat.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -194,7 +194,7 @@ export function FeaturesSection() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
-                    href="/telubulan/kuru-baya?to=Made+Surya"
+                    href="/otonan/kuru-baya?to=Made+Surya"
                     className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-[#2F4538] px-5 py-2.5 text-sm font-semibold text-[#F7F6F2] transition-colors hover:bg-[#23352A]"
                   >
                     Coba Pengalaman Tamu
