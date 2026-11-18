@@ -27,6 +27,16 @@ export async function generateMetadata({
   return {
     title: `${invitation.hero.subtitle}: ${invitation.hero.displayTitle}`,
     description: `${invitation.hero.subtitle} ${invitation.hero.displayTitle} — ${invitation.hero.dateLocationSummary}`,
+    openGraph: {
+      title: `${invitation.hero.subtitle}: ${invitation.hero.displayTitle}`,
+      description: `${invitation.hero.subtitle} ${invitation.hero.displayTitle} — ${invitation.hero.dateLocationSummary}`,
+      images: [
+        {
+          url: invitation.hero.coverImage,
+          alt: invitation.hero.coverImageAlt,
+        },
+      ],
+    },
   };
 }
 
