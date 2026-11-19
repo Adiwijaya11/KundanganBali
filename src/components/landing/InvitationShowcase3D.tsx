@@ -203,7 +203,7 @@ export function InvitationShowcase3D() {
                         Undangan Upacara Tiga Oton
                       </p>
                       <h3 className="mt-2 font-serif text-3xl font-semibold leading-tight text-[#241D15]">
-                        I Made Kuru Baya
+                        I Made Kurubaya
                       </h3>
                       <PadmaDivider className="mx-auto my-4 max-w-[160px]" />
                       <p className="text-xs font-medium text-[#5C4F3E]">
